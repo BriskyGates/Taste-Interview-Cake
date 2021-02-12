@@ -1,0 +1,463 @@
+2021-02-12 14:08:17.551 | ERROR    | __main__:deal_purchase_promotion:60 - An error has been caught in function 'deal_purchase_promotion', process 'MainProcess' (4400), thread 'MainThread' (17248):
+Traceback (most recent call last):
+
+  File "C:\Users\Epiphony\AppData\Local\Programs\Python\Python37\lib\configparser.py", line 845, in items
+    d.update(self._sections[section])
+    │ │      │    │         └ '电子'
+    │ │      │    └ OrderedDict()
+    │ │      └ <configparser.ConfigParser object at 0x0000021ED4897D48>
+    │ └ <method 'update' of 'collections.OrderedDict' objects>
+    └ OrderedDict()
+
+KeyError: '电子'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\JetBrains\PyCharm 2020.3\plugins\python\helpers\pydev\pydevd.py", line 2167, in <module>
+    main()
+    └ <function main at 0x0000021ED45CC798>
+
+  File "C:\Program Files\JetBrains\PyCharm 2020.3\plugins\python\helpers\pydev\pydevd.py", line 2158, in main
+    globals = debugger.run(setup['file'], None, None, is_module)
+              │        │   │                          └ False
+              │        │   └ {'port': 8430, 'vm_type': None, 'client': '127.0.0.1', 'server': False, 'DEBUG_RECORD_SOCKET_READS': False, 'multiproc': True...
+              │        └ <function PyDB.run at 0x0000021ED45C1CA8>
+              └ <__main__.PyDB object at 0x0000021ED17A5A08>
+
+  File "C:\Program Files\JetBrains\PyCharm 2020.3\plugins\python\helpers\pydev\pydevd.py", line 1470, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+           │    │     │          │               │            │     │        └ {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader obj...
+           │    │     │          │               │            │     └ {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader obj...
+           │    │     │          │               │            └ 'D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py'
+           │    │     │          │               └ None
+           │    │     │          └ ''
+           │    │     └ False
+           │    └ <function PyDB._exec at 0x0000021ED45C1D38>
+           └ <__main__.PyDB object at 0x0000021ED17A5A08>
+
+  File "C:\Program Files\JetBrains\PyCharm 2020.3\plugins\python\helpers\pydev\pydevd.py", line 1477, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+    │             │        │     │        └ {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader obj...
+    │             │        │     └ {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader obj...
+    │             │        └ 'D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py'
+    │             └ <function execfile at 0x0000021ED1F21168>
+    └ <module '_pydev_bundle.pydev_imports' from 'C:\\Program Files\\JetBrains\\PyCharm 2020.3\\plugins\\python\\helpers\\pydev\\_p...
+
+  File "C:\Program Files\JetBrains\PyCharm 2020.3\plugins\python\helpers\pydev\_pydev_imps\_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+                 │              │              │     └ {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader obj...
+                 │              │              └ {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader obj...
+                 │              └ 'D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py'
+                 └ 'from loguru import logger\n\nfrom config.fetch_config import CategoryConfig\nfrom relevant_class.handler_data_class import H...
+
+  File "D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py", line 84, in <module>
+    dr.main()
+    │  └ <function DigestReceipt.main at 0x0000021ED4893E58>
+    └ <__main__.DigestReceipt object at 0x0000021ED483A748>
+
+  File "D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py", line 70, in main
+    self.deal_purchase_promotion()
+    │    └ <function DigestReceipt.deal_purchase_promotion at 0x0000021ED4893DC8>
+    └ <__main__.DigestReceipt object at 0x0000021ED483A748>
+
+> File "D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py", line 60, in deal_purchase_promotion
+    category_str = cc.read_config(key)  # 包括该类别下的所有商品
+                   │  │           └ '电子'
+                   │  └ <function CategoryConfig.read_config at 0x0000021ED45FB318>
+                   └ <config.fetch_config.CategoryConfig object at 0x0000021ED4891688>
+
+  File "D:\项目相关2020年11月6日\shopping_cart\config\fetch_config.py", line 25, in read_config
+    file_properties = self.config.items(section)
+                      │    │      │     └ '电子'
+                      │    │      └ <function RawConfigParser.items at 0x0000021ED4695288>
+                      │    └ <configparser.ConfigParser object at 0x0000021ED4897D48>
+                      └ <config.fetch_config.CategoryConfig object at 0x0000021ED4891688>
+
+  File "C:\Users\Epiphony\AppData\Local\Programs\Python\Python37\lib\configparser.py", line 848, in items
+    raise NoSectionError(section)
+          │              └ '电子'
+          └ <class 'configparser.NoSectionError'>
+
+configparser.NoSectionError: No section: '电子'
+2021-02-12 14:10:39.499 | ERROR    | __main__:deal_purchase_promotion:59 - An error has been caught in function 'deal_purchase_promotion', process 'MainProcess' (16492), thread 'MainThread' (10184):
+Traceback (most recent call last):
+
+  File "C:\Users\Epiphony\AppData\Local\Programs\Python\Python37\lib\configparser.py", line 845, in items
+    d.update(self._sections[section])
+    │ │      │    │         └ 'category'
+    │ │      │    └ OrderedDict()
+    │ │      └ <configparser.ConfigParser object at 0x000001E321EE1708>
+    │ └ <method 'update' of 'collections.OrderedDict' objects>
+    └ OrderedDict()
+
+KeyError: 'category'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\JetBrains\PyCharm 2020.3\plugins\python\helpers\pydev\pydevd.py", line 2167, in <module>
+    main()
+    └ <function main at 0x000001E321C1A798>
+
+  File "C:\Program Files\JetBrains\PyCharm 2020.3\plugins\python\helpers\pydev\pydevd.py", line 2158, in main
+    globals = debugger.run(setup['file'], None, None, is_module)
+              │        │   │                          └ False
+              │        │   └ {'port': 8510, 'vm_type': None, 'client': '127.0.0.1', 'server': False, 'DEBUG_RECORD_SOCKET_READS': False, 'multiproc': True...
+              │        └ <function PyDB.run at 0x000001E321C11CA8>
+              └ <__main__.PyDB object at 0x000001E31F145A08>
+
+  File "C:\Program Files\JetBrains\PyCharm 2020.3\plugins\python\helpers\pydev\pydevd.py", line 1470, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+           │    │     │          │               │            │     │        └ {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader obj...
+           │    │     │          │               │            │     └ {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader obj...
+           │    │     │          │               │            └ 'D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py'
+           │    │     │          │               └ None
+           │    │     │          └ ''
+           │    │     └ False
+           │    └ <function PyDB._exec at 0x000001E321C11D38>
+           └ <__main__.PyDB object at 0x000001E31F145A08>
+
+  File "C:\Program Files\JetBrains\PyCharm 2020.3\plugins\python\helpers\pydev\pydevd.py", line 1477, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+    │             │        │     │        └ {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader obj...
+    │             │        │     └ {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader obj...
+    │             │        └ 'D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py'
+    │             └ <function execfile at 0x000001E31F551168>
+    └ <module '_pydev_bundle.pydev_imports' from 'C:\\Program Files\\JetBrains\\PyCharm 2020.3\\plugins\\python\\helpers\\pydev\\_p...
+
+  File "C:\Program Files\JetBrains\PyCharm 2020.3\plugins\python\helpers\pydev\_pydev_imps\_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+                 │              │              │     └ {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader obj...
+                 │              │              └ {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader obj...
+                 │              └ 'D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py'
+                 └ 'from loguru import logger\n\nfrom config.fetch_config import CategoryConfig\nfrom relevant_class.handler_data_class import H...
+
+  File "D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py", line 85, in <module>
+    dr.main()
+    │  └ <function DigestReceipt.main at 0x000001E321EE3E58>
+    └ <__main__.DigestReceipt object at 0x000001E321C38888>
+
+  File "D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py", line 71, in main
+    self.deal_purchase_promotion()
+    │    └ <function DigestReceipt.deal_purchase_promotion at 0x000001E321EE3DC8>
+    └ <__main__.DigestReceipt object at 0x000001E321C38888>
+
+> File "D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py", line 59, in deal_purchase_promotion
+    category_dict = cc.read_config()  # 包括该类别下的所有商品
+                    │  └ <function CategoryConfig.read_config at 0x000001E321C4B318>
+                    └ <config.fetch_config.CategoryConfig object at 0x000001E321EE1B48>
+
+  File "D:\项目相关2020年11月6日\shopping_cart\config\fetch_config.py", line 25, in read_config
+    file_properties = self.config.items(section)
+                      │    │      │     └ 'category'
+                      │    │      └ <function RawConfigParser.items at 0x000001E321CE5288>
+                      │    └ <configparser.ConfigParser object at 0x000001E321EE1708>
+                      └ <config.fetch_config.CategoryConfig object at 0x000001E321EE1B48>
+
+  File "C:\Users\Epiphony\AppData\Local\Programs\Python\Python37\lib\configparser.py", line 848, in items
+    raise NoSectionError(section)
+          │              └ 'category'
+          └ <class 'configparser.NoSectionError'>
+
+configparser.NoSectionError: No section: 'category'
+2021-02-12 14:11:22.564 | ERROR    | __main__:deal_purchase_promotion:59 - An error has been caught in function 'deal_purchase_promotion', process 'MainProcess' (7564), thread 'MainThread' (9856):
+Traceback (most recent call last):
+
+  File "C:\Users\Epiphony\AppData\Local\Programs\Python\Python37\lib\configparser.py", line 845, in items
+    d.update(self._sections[section])
+    │ │      │    │         └ 'category'
+    │ │      │    └ OrderedDict()
+    │ │      └ <configparser.ConfigParser object at 0x000002875A2E5988>
+    │ └ <method 'update' of 'collections.OrderedDict' objects>
+    └ OrderedDict()
+
+KeyError: 'category'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py", line 85, in <module>
+    dr.main()
+    │  └ <function DigestReceipt.main at 0x000002875A2E7A68>
+    └ <__main__.DigestReceipt object at 0x000002875834D488>
+
+  File "D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py", line 71, in main
+    self.deal_purchase_promotion()
+    │    └ <function DigestReceipt.deal_purchase_promotion at 0x000002875A2E79D8>
+    └ <__main__.DigestReceipt object at 0x000002875834D488>
+
+> File "D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py", line 59, in deal_purchase_promotion
+    category_dict = cc.read_config()  # 包括该类别下的所有商品
+                    │  └ <function CategoryConfig.read_config at 0x000002875A1EB168>
+                    └ <config.fetch_config.CategoryConfig object at 0x000002875A2E5888>
+
+  File "D:\项目相关2020年11月6日\shopping_cart\config\fetch_config.py", line 25, in read_config
+    file_properties = self.config.items(section)
+                      │    │      │     └ 'category'
+                      │    │      └ <function RawConfigParser.items at 0x000002875A204048>
+                      │    └ <configparser.ConfigParser object at 0x000002875A2E5988>
+                      └ <config.fetch_config.CategoryConfig object at 0x000002875A2E5888>
+
+  File "C:\Users\Epiphony\AppData\Local\Programs\Python\Python37\lib\configparser.py", line 848, in items
+    raise NoSectionError(section)
+          │              └ 'category'
+          └ <class 'configparser.NoSectionError'>
+
+configparser.NoSectionError: No section: 'category'
+2021-02-12 14:11:22.936 | ERROR    | __main__:deal_purchase_promotion:59 - An error has been caught in function 'deal_purchase_promotion', process 'MainProcess' (4684), thread 'MainThread' (548):
+Traceback (most recent call last):
+
+  File "C:\Users\Epiphony\AppData\Local\Programs\Python\Python37\lib\configparser.py", line 845, in items
+    d.update(self._sections[section])
+    │ │      │    │         └ 'category'
+    │ │      │    └ OrderedDict()
+    │ │      └ <configparser.ConfigParser object at 0x0000029836AE5A48>
+    │ └ <method 'update' of 'collections.OrderedDict' objects>
+    └ OrderedDict()
+
+KeyError: 'category'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py", line 85, in <module>
+    dr.main()
+    │  └ <function DigestReceipt.main at 0x0000029836AE7A68>
+    └ <__main__.DigestReceipt object at 0x0000029834B5D488>
+
+  File "D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py", line 71, in main
+    self.deal_purchase_promotion()
+    │    └ <function DigestReceipt.deal_purchase_promotion at 0x0000029836AE79D8>
+    └ <__main__.DigestReceipt object at 0x0000029834B5D488>
+
+> File "D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py", line 59, in deal_purchase_promotion
+    category_dict = cc.read_config()  # 包括该类别下的所有商品
+                    │  └ <function CategoryConfig.read_config at 0x00000298369E8168>
+                    └ <config.fetch_config.CategoryConfig object at 0x0000029836AE59C8>
+
+  File "D:\项目相关2020年11月6日\shopping_cart\config\fetch_config.py", line 25, in read_config
+    file_properties = self.config.items(section)
+                      │    │      │     └ 'category'
+                      │    │      └ <function RawConfigParser.items at 0x0000029836A05048>
+                      │    └ <configparser.ConfigParser object at 0x0000029836AE5A48>
+                      └ <config.fetch_config.CategoryConfig object at 0x0000029836AE59C8>
+
+  File "C:\Users\Epiphony\AppData\Local\Programs\Python\Python37\lib\configparser.py", line 848, in items
+    raise NoSectionError(section)
+          │              └ 'category'
+          └ <class 'configparser.NoSectionError'>
+
+configparser.NoSectionError: No section: 'category'
+2021-02-12 14:11:59.567 | ERROR    | __main__:deal_purchase_promotion:59 - An error has been caught in function 'deal_purchase_promotion', process 'MainProcess' (14728), thread 'MainThread' (12316):
+Traceback (most recent call last):
+
+  File "C:\Users\Epiphony\AppData\Local\Programs\Python\Python37\lib\configparser.py", line 845, in items
+    d.update(self._sections[section])
+    │ │      │    │         └ 'category'
+    │ │      │    └ OrderedDict()
+    │ │      └ <configparser.ConfigParser object at 0x00000210E5BC5908>
+    │ └ <method 'update' of 'collections.OrderedDict' objects>
+    └ OrderedDict()
+
+KeyError: 'category'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py", line 85, in <module>
+    dr.main()
+    │  └ <function DigestReceipt.main at 0x00000210E5BC7A68>
+    └ <__main__.DigestReceipt object at 0x00000210E3C4D4C8>
+
+  File "D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py", line 71, in main
+    self.deal_purchase_promotion()
+    │    └ <function DigestReceipt.deal_purchase_promotion at 0x00000210E5BC79D8>
+    └ <__main__.DigestReceipt object at 0x00000210E3C4D4C8>
+
+> File "D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py", line 59, in deal_purchase_promotion
+    category_dict = cc.read_config()  # 包括该类别下的所有商品
+                    │  └ <function CategoryConfig.read_config at 0x00000210E5AC8168>
+                    └ <config.fetch_config.CategoryConfig object at 0x00000210E5BC5A08>
+
+  File "D:\项目相关2020年11月6日\shopping_cart\config\fetch_config.py", line 25, in read_config
+    file_properties = self.config.items(section)
+                      │    │      │     └ 'category'
+                      │    │      └ <function RawConfigParser.items at 0x00000210E5AE5048>
+                      │    └ <configparser.ConfigParser object at 0x00000210E5BC5908>
+                      └ <config.fetch_config.CategoryConfig object at 0x00000210E5BC5A08>
+
+  File "C:\Users\Epiphony\AppData\Local\Programs\Python\Python37\lib\configparser.py", line 848, in items
+    raise NoSectionError(section)
+          │              └ 'category'
+          └ <class 'configparser.NoSectionError'>
+
+configparser.NoSectionError: No section: 'category'
+2021-02-12 14:18:17.391 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 14:42:51.618 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 14:44:11.688 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 14:46:02.334 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 14:47:54.536 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 14:48:11.641 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 14:48:57.606 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 14:49:33.226 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 14:52:25.593 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 14:55:28.918 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 14:58:49.547 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:01:01.325 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:01:01.339 | INFO     | __main__:deal_settle_coupon:90 - 当前优惠券失效,优惠日期为2014.3.2
+2021-02-12 15:01:21.573 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:01:21.588 | INFO     | __main__:deal_settle_coupon:90 - 当前优惠券失效,优惠日期为2014.3.2
+2021-02-12 15:01:42.240 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:01:42.255 | INFO     | __main__:deal_settle_coupon:90 - 当前优惠券失效,优惠日期为2014.3.2
+2021-02-12 15:04:35.201 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:04:35.221 | INFO     | __main__:deal_settle_coupon:92 - 当前优惠券失效,优惠日期为2014.3.2
+2021-02-12 15:04:57.854 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:04:57.872 | INFO     | __main__:deal_settle_coupon:92 - 当前优惠券失效,优惠日期为2014.3.2
+2021-02-12 15:05:28.415 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:05:28.419 | INFO     | __main__:deal_settle_coupon:92 - 当前优惠券失效,优惠日期为2014.3.2
+2021-02-12 15:07:24.621 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:07:24.637 | INFO     | __main__:deal_settle_coupon:92 - 当前优惠券失效,优惠日期为2014.3.2
+2021-02-12 15:10:13.734 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:10:13.752 | INFO     | __main__:deal_settle_coupon:95 - 当前优惠券失效,优惠日期为2014.3.2
+2021-02-12 15:11:32.454 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:11:32.470 | INFO     | __main__:deal_settle_coupon:95 - 当前优惠券失效,优惠日期为2014.3.2
+2021-02-12 15:12:13.894 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:12:13.910 | INFO     | __main__:deal_settle_coupon:95 - 当前优惠券失效,优惠日期为2014.3.2
+2021-02-12 15:16:38.091 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:16:38.107 | INFO     | __main__:deal_settle_coupon:97 - 当前优惠券失效,优惠日期为2014.3.2
+2021-02-12 15:16:54.877 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:16:54.894 | INFO     | __main__:deal_settle_coupon:97 - 当前优惠券失效,优惠日期为2014.3.2
+2021-02-12 15:21:11.970 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:21:11.986 | INFO     | __main__:deal_settle_coupon:108 - 当前优惠券失效,优惠日期为2014.3.2
+2021-02-12 15:21:21.750 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:21:21.765 | INFO     | __main__:deal_settle_coupon:108 - 当前优惠券失效,优惠日期为2014.3.2
+2021-02-12 15:21:42.383 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:21:42.398 | INFO     | __main__:deal_settle_coupon:108 - 当前优惠券失效,优惠日期为2014.3.2
+2021-02-12 15:21:57.162 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:21:57.177 | INFO     | __main__:deal_settle_coupon:108 - 当前优惠券失效,优惠日期为2014.3.2
+2021-02-12 15:22:12.704 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:22:12.719 | INFO     | __main__:deal_settle_coupon:108 - 当前优惠券失效,优惠日期为2014.3.2
+2021-02-12 15:23:50.778 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:24:40.410 | INFO     | config.fetch_config:read_config:27 - {'电子': 'ipad,iphone,显示器,笔记本电脑,键盘', '食品': '面包,饼干,蛋糕,牛肉,鱼,蔬菜', '日用品': '餐巾纸,收纳箱,咖啡杯,雨伞', '酒类': '啤酒,白酒,伏特加'}
+2021-02-12 15:30:01.796 | INFO     | relevant_class.handler_data_class:keep_decimal_place:45 - 3283.60
+2021-02-12 15:33:13.836 | ERROR    | __main__:main:124 - An error has been caught in function 'main', process 'MainProcess' (14580), thread 'MainThread' (14692):
+Traceback (most recent call last):
+
+  File "D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py", line 138, in <module>
+    dr.main()
+    │  └ <function DigestReceipt.main at 0x0000020FBFF3C828>
+    └ <__main__.DigestReceipt object at 0x0000020FBDFBDB08>
+
+> File "D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py", line 124, in main
+    self.calculate_total_price()
+    │    └ <function DigestReceipt.calculate_total_price at 0x0000020FBFF3C438>
+    └ <__main__.DigestReceipt object at 0x0000020FBDFBDB08>
+
+  File "D:/项目相关2020年11月6日/shopping_cart/relevant_class/digest_receipt.py", line 84, in calculate_total_price
+    total_price = self.cr.accept_cash(total_price)
+                  │    │  │           └ 3283.6
+                  │    │  └ <function CashReturn.accept_cash at 0x0000020FBFE5F3A8>
+                  │    └ <relevant_class.cash_class.CashReturn object at 0x0000020FBFF38948>
+                  └ <__main__.DigestReceipt object at 0x0000020FBDFBDB08>
+
+  File "D:\项目相关2020年11月6日\shopping_cart\relevant_class\cash_class.py", line 29, in accept_cash
+    if money >= self.money_condition:
+       │        │    └ '1000'
+       │        └ <relevant_class.cash_class.CashReturn object at 0x0000020FBFF38948>
+       └ 3283.6
+
+TypeError: '>=' not supported between instances of 'float' and 'str'
+2021-02-12 15:35:20.667 | INFO     | relevant_class.handler_data_class:keep_decimal_place:45 - 3083.60
+2021-02-12 15:35:49.309 | INFO     | __main__:deal_settle_coupon:104 - 现在没有任何优惠信息哦 :<
+2021-02-12 15:35:49.309 | INFO     | relevant_class.handler_data_class:keep_decimal_place:45 - 17.94
+2021-02-12 15:38:08.594 | INFO     | __main__:deal_settle_coupon:104 - 现在没有任何优惠信息哦 :<
+2021-02-12 15:38:08.594 | INFO     | relevant_class.handler_data_class:keep_decimal_place:45 - 43.54
+2021-02-12 15:39:29.749 | INFO     | __main__:deal_settle_coupon:104 - 现在没有任何优惠信息哦 :<
+2021-02-12 15:39:29.749 | INFO     | relevant_class.handler_data_class:keep_decimal_place:45 - 17.94
+2021-02-12 18:24:10.666 | INFO     | __main__:deal_settle_coupon:104 - 现在没有任何优惠信息哦 :<
+2021-02-12 18:24:10.666 | INFO     | relevant_class.handler_data_class:keep_decimal_place:45 - 43.54
+2021-02-12 18:25:43.620 | INFO     | relevant_class.handler_data_class:keep_decimal_place:45 - 4343.00
+2021-02-12 18:26:31.817 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显示器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '面包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 18:26:31.824 | INFO     | relevant_class.handler_data_class:keep_decimal_place:45 - 4343.00
+2021-02-12 18:27:45.318 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显示器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '面包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 18:27:45.323 | INFO     | relevant_class.handler_data_class:keep_decimal_place:45 - 4343.00
+2021-02-12 18:28:05.343 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显示器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '面包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 18:29:48.361 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显示器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '面包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 18:31:47.039 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显示器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '面包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 18:31:47.041 | INFO     | __main__:deal_purchase_promotion:98 - {}
+2021-02-12 18:31:47.045 | INFO     | relevant_class.handler_data_class:keep_decimal_place:45 - 4343.00
+2021-02-12 18:32:59.420 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显示器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '面包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 18:32:59.421 | INFO     | __main__:deal_purchase_promotion:98 - 为商品添加完泽口的数据{}
+2021-02-12 18:32:59.425 | INFO     | relevant_class.handler_data_class:keep_decimal_place:45 - 4343.00
+2021-02-12 18:37:19.150 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显示器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '面包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 18:37:19.150 | INFO     | __main__:deal_purchase_promotion:98 - 为商品添加完折扣的数据{}
+2021-02-12 18:37:19.150 | INFO     | relevant_class.handler_data_class:keep_decimal_place:45 - 4343.00
+2021-02-12 18:38:47.907 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显示器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '面包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 18:38:47.907 | INFO     | __main__:deal_purchase_promotion:98 - 为商品添加完折扣的数据{}
+2021-02-12 18:38:47.923 | INFO     | relevant_class.handler_data_class:keep_decimal_place:45 - 4343.00
+2021-02-12 18:39:16.235 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显示器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '面包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 18:39:16.235 | INFO     | __main__:deal_purchase_promotion:98 - 为商品添加完折扣的数据{}
+2021-02-12 18:39:16.235 | INFO     | relevant_class.handler_data_class:keep_decimal_place:45 - 4343.00
+2021-02-12 18:39:41.906 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显示器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '面包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 18:39:41.906 | INFO     | __main__:deal_purchase_promotion:98 - 为商品添加完折扣的数据{}
+2021-02-12 18:39:41.921 | INFO     | relevant_class.handler_data_class:keep_decimal_place:45 - 4343.00
+2021-02-12 18:49:33.581 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显示器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '面包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 18:49:33.581 | INFO     | __main__:deal_purchase_promotion:98 - 为商品添加完折扣的数据{'电子': {'good_discount': '0.7'}}
+2021-02-12 18:49:33.596 | INFO     | relevant_class.handler_data_class:keep_decimal_place:45 - 3083.60
+2021-02-12 18:59:45.542 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显⽰器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 18:59:45.542 | INFO     | __main__:deal_purchase_promotion:93 - 为商品添加完折扣的数据{}
+2021-02-12 18:59:45.558 | INFO     | relevant_class.handler_data_class:keep_decimal_place:45 - 4298.00
+2021-02-12 19:01:54.679 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显⽰器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '⾯包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 19:01:54.679 | INFO     | __main__:deal_purchase_promotion:93 - 为商品添加完折扣的数据{}
+2021-02-12 19:01:54.679 | INFO     | relevant_class.handler_data_class:keep_decimal_place:41 - 4343.00
+2021-02-12 19:02:19.330 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显⽰器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '⾯包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 19:04:28.126 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显示器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '⾯包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 19:04:28.126 | ERROR    | __main__:deal_purchase_promotion:94 - 用户购买的商品无法获取分类,商品名为啤酒
+2021-02-12 19:04:28.126 | ERROR    | __main__:deal_purchase_promotion:94 - 用户购买的商品无法获取分类,商品名为⾯包
+2021-02-12 19:04:28.126 | INFO     | __main__:deal_purchase_promotion:95 - 为商品添加完折扣的数据{'电子': {'good_discount': '0.7'}}
+2021-02-12 19:04:28.126 | INFO     | relevant_class.handler_data_class:keep_decimal_place:41 - 3083.60
+2021-02-12 19:05:54.312 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显示器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '⾯包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 19:05:54.312 | ERROR    | __main__:deal_purchase_promotion:94 - 用户购买的商品无法获取分类,商品名为啤酒
+2021-02-12 19:05:54.312 | ERROR    | __main__:deal_purchase_promotion:94 - 用户购买的商品无法获取分类,商品名为⾯包
+2021-02-12 19:05:54.312 | INFO     | __main__:deal_purchase_promotion:95 - 为商品添加完折扣的数据{'电子': {'good_discount': '0.7'}}
+2021-02-12 19:05:54.327 | INFO     | relevant_class.handler_data_class:keep_decimal_place:41 - 3083.60
+2021-02-12 19:07:15.963 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显示器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '⾯包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 19:08:20.721 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显示器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '⾯包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 19:08:20.721 | ERROR    | __main__:deal_purchase_promotion:94 - 用户购买的商品啤酒没有优惠政策
+2021-02-12 19:08:20.721 | ERROR    | __main__:deal_purchase_promotion:94 - 用户购买的商品⾯包没有优惠政策
+2021-02-12 19:08:20.721 | INFO     | __main__:deal_purchase_promotion:95 - 为商品添加完折扣的数据{'电子': {'good_discount': '0.7'}}
+2021-02-12 19:08:20.736 | INFO     | relevant_class.handler_data_class:keep_decimal_place:41 - 3083.60
+2021-02-12 19:08:28.434 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显示器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '⾯包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 19:08:28.434 | INFO     | __main__:deal_purchase_promotion:94 - 用户购买的商品啤酒没有优惠政策
+2021-02-12 19:08:28.434 | INFO     | __main__:deal_purchase_promotion:94 - 用户购买的商品⾯包没有优惠政策
+2021-02-12 19:08:28.434 | INFO     | __main__:deal_purchase_promotion:95 - 为商品添加完折扣的数据{'电子': {'good_discount': '0.7'}}
+2021-02-12 19:08:28.434 | INFO     | relevant_class.handler_data_class:keep_decimal_place:41 - 3083.60
+2021-02-12 19:09:11.470 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显示器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '⾯包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 19:09:11.470 | INFO     | __main__:deal_purchase_promotion:94 - 用户购买的商品啤酒没有优惠政策
+2021-02-12 19:09:11.470 | INFO     | __main__:deal_purchase_promotion:94 - 用户购买的商品⾯包没有优惠政策
+2021-02-12 19:09:11.470 | INFO     | __main__:deal_purchase_promotion:95 - 为商品添加完折扣的数据{'电子': {'good_discount': '0.7'}}
+2021-02-12 19:09:11.470 | INFO     | relevant_class.handler_data_class:keep_decimal_place:41 - 3083.60
+2021-02-12 19:09:47.020 | INFO     | __main__:fetch_purchase_info:57 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显示器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '⾯包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 19:09:47.020 | INFO     | __main__:deal_purchase_promotion:94 - 用户购买的商品啤酒没有优惠政策
+2021-02-12 19:09:47.020 | INFO     | __main__:deal_purchase_promotion:94 - 用户购买的商品⾯包没有优惠政策
+2021-02-12 19:09:47.020 | INFO     | __main__:deal_purchase_promotion:95 - 为商品添加完折扣的数据{'电子': {'good_discount': '0.7'}}
+2021-02-12 21:28:52.528 | INFO     | __main__:fetch_purchase_info:56 - 提取到的商品列表为{'ipad': {'good_num': '1', 'good_unit_price': '2399.00', 'good_discount': '1', 'good_sum_price': ''}, '显示器': {'good_num': '1', 'good_unit_price': '1799.00', 'good_discount': '1', 'good_sum_price': ''}, '啤酒': {'good_num': '12', 'good_unit_price': '25.00', 'good_discount': '1', 'good_sum_price': ''}, '⾯包': {'good_num': '5', 'good_unit_price': '9.00', 'good_discount': '1', 'good_sum_price': ''}}
+2021-02-12 21:28:52.544 | INFO     | __main__:deal_purchase_promotion:93 - 用户购买的商品啤酒没有优惠政策
+2021-02-12 21:28:52.544 | INFO     | __main__:deal_purchase_promotion:93 - 用户购买的商品⾯包没有优惠政策
+2021-02-12 21:28:52.544 | INFO     | __main__:deal_purchase_promotion:94 - 为商品添加完折扣的数据{'电子': {'good_discount': '0.7'}}
